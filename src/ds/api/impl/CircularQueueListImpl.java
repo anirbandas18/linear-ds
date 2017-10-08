@@ -4,14 +4,14 @@ import java.util.StringJoiner;
 
 import ds.api.Queue;
 import ds.exception.SequenceUnderflowException;
-import ds.model.LinearNode;
+import ds.model.SequenceNode;
 
 public class CircularQueueListImpl extends Queue {
 
 	@Override
-	public void insert(Object item) {
+	public void enqueue(Object item) {
 		// TODO Auto-generated method stub
-		LinearNode ndptr = new LinearNode(item);
+		SequenceNode ndptr = new SequenceNode(item);
 		size++;
 		if (rear == null) {
 			front = rear = ndptr;
@@ -23,7 +23,7 @@ public class CircularQueueListImpl extends Queue {
 	}
 
 	@Override
-	public Object delete() throws SequenceUnderflowException {
+	public Object dequeue() throws SequenceUnderflowException {
 		// TODO Auto-generated method stub
 		if (front == null) {
 			size = 0;
@@ -56,7 +56,7 @@ public class CircularQueueListImpl extends Queue {
 	public String display() {
 		// TODO Auto-generated method stub
 		StringJoiner content = new StringJoiner(" -> ");
-		LinearNode ptr = front;
+		SequenceNode ptr = front;
 		do {
 			String data = ptr.getData().toString();
 			content = content.add(data);

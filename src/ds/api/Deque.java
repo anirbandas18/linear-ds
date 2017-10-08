@@ -1,11 +1,11 @@
 package ds.api;
 
 import ds.exception.SequenceUnderflowException;
-import ds.model.LinearNode;
+import ds.model.SequenceNode;
 
 public abstract class Deque implements Sequence {
 	
-	protected LinearNode front, rear;
+	protected SequenceNode front, rear;
 	
 	protected Integer size;
 	
@@ -20,5 +20,11 @@ public abstract class Deque implements Sequence {
 	public abstract Object peekFirst() throws SequenceUnderflowException;
 	
 	public abstract Object peekLast() throws SequenceUnderflowException;
+	
+	public Deque() {
+		this.front = null;
+		this.rear = null;
+		this.size = 0;
+	}
 
 }

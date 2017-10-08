@@ -29,17 +29,17 @@ public class SequenceService {
 	public static void queueDemo() {
 		Queue q = new QueueListImpl();
 		try {
-			System.out.println(q.delete());
+			System.out.println(q.dequeue());
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
 		testDataSet.forEach(d -> {
-			q.insert(d);
+			q.enqueue(d);
 		});
 		System.out.println(q.display());
 		q.clear();
-		q.insert(1);
-		q.insert("jk");
+		q.enqueue(1);
+		q.enqueue("jk");
 		System.out.println(q.display());
 		System.out.println(q.size());
 	}
@@ -89,17 +89,17 @@ public class SequenceService {
 	public static void circularQueueDemo() {
 		Queue q = new CircularQueueListImpl();
 		try {
-			System.out.println(q.delete());
+			System.out.println(q.dequeue());
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
 		testDataSet.forEach(d -> {
-			q.insert(d);
+			q.enqueue(d);
 		});
 		System.out.println(q.display());
 		q.clear();
-		q.insert(1);
-		q.insert("jk");
+		q.enqueue(1);
+		q.enqueue("jk");
 		System.out.println(q.display());
 		System.out.println(q.size());
 	}

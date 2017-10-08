@@ -4,7 +4,7 @@ import java.util.StringJoiner;
 
 import ds.api.Deque;
 import ds.exception.SequenceUnderflowException;
-import ds.model.LinearNode;
+import ds.model.SequenceNode;
 
 public class DequeListImpl extends Deque {
 	
@@ -30,7 +30,7 @@ public class DequeListImpl extends Deque {
 	@Override
 	public void offerFirst(Object item) {
 		// TODO Auto-generated method stub
-		LinearNode ndptr = new LinearNode(item);
+		SequenceNode ndptr = new SequenceNode(item);
 		size++;
 		if(front == null) {
 			front = rear = ndptr;
@@ -44,7 +44,7 @@ public class DequeListImpl extends Deque {
 	@Override
 	public void offerLast(Object item) {
 		// TODO Auto-generated method stub
-		LinearNode ndptr = new LinearNode(item);
+		SequenceNode ndptr = new SequenceNode(item);
 		size++;
 		if(rear == null) {
 			front = rear = ndptr;
@@ -107,17 +107,11 @@ public class DequeListImpl extends Deque {
 		}
 	}
 
-	public DequeListImpl() {
-		this.front = null;
-		this.rear = null;
-		this.size = 0;
-	}
-
 	@Override
 	public String display() {
 		// TODO Auto-generated method stub
 		StringJoiner content = new StringJoiner(" -> ");
-		for(LinearNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
+		for(SequenceNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
 			String data = ptr.getData().toString();
 			content = content.add(data);
 		}

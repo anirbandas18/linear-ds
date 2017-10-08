@@ -1,11 +1,11 @@
 package ds.api;
 
 import ds.exception.SequenceUnderflowException;
-import ds.model.LinearNode;
+import ds.model.SequenceNode;
 
 public abstract class Queue implements Sequence {
 
-	protected LinearNode front, rear;
+	protected SequenceNode front, rear;
 
 	protected Integer size;
 	
@@ -39,10 +39,19 @@ public abstract class Queue implements Sequence {
 		return content.toString();
 	}*/
 
-	public abstract void insert(Object item);
+	public abstract void enqueue(Object item);
 
-	public abstract Object delete() throws SequenceUnderflowException;
+	public abstract Object dequeue() throws SequenceUnderflowException;
 
 	public abstract Object peek() throws SequenceUnderflowException;
+
+	public Queue() {
+		super();
+		this.front = null;
+		this.rear = null;
+		this.size = 0;
+	}
+	
+	
 
 }
