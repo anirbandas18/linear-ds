@@ -1,8 +1,8 @@
-package api.impl;
+package ds.api.impl;
 
-import api.Queue;
-import exception.SequenceUnderflowException;
-import model.Node;
+import ds.api.Queue;
+import ds.exception.SequenceUnderflowException;
+import ds.model.Node;
 
 public class CircularQueueListImpl extends Queue {
 
@@ -11,7 +11,7 @@ public class CircularQueueListImpl extends Queue {
 		// TODO Auto-generated method stub
 		Node ndptr = new Node(item);
 		size++;
-		if(front == null) {
+		if(rear == null) {
 			front = rear = ndptr;
 		} else {
 			ndptr.setNext(front);
@@ -23,7 +23,20 @@ public class CircularQueueListImpl extends Queue {
 	@Override
 	public Object delete() throws SequenceUnderflowException {
 		// TODO Auto-generated method stub
-		return null;
+		if(front == null) {
+			size = 0;
+			throw new SequenceUnderflowException(this.getClass());
+		} else {
+			Object item = front.getData();
+			if(front == rear) {
+				clear();
+			} else {
+				front = front.getNext();
+				rear.setNext(front);
+			}
+			size--;
+			return item;
+		}
 	}
 
 	@Override

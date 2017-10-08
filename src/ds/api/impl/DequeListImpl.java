@@ -1,10 +1,10 @@
-package api.impl;
+package ds.api.impl;
 
 import java.util.StringJoiner;
 
-import api.Deque;
-import exception.SequenceUnderflowException;
-import model.Node;
+import ds.api.Deque;
+import ds.exception.SequenceUnderflowException;
+import ds.model.Node;
 
 public class DequeListImpl implements Deque {
 	

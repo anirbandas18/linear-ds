@@ -1,8 +1,8 @@
-package api;
+package ds.api;
 
-import exception.SequenceUnderflowException;
+import ds.exception.SequenceUnderflowException;
 
-public interface Stack extends Sequence{
+public interface Stack extends Sequence {
 
 	public void push(Object item);
 	

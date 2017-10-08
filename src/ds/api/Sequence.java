@@ -1,4 +1,4 @@
-package api;
+package ds.api;
 
 public interface Sequence {
 

@@ -1,6 +1,6 @@
-package app;
+package ds.app;
 
-import service.SequenceService;
+import ds.service.SequenceService;
 
 public class LinearDSApplication {
 	

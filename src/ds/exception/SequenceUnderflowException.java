@@ -1,4 +1,4 @@
-package exception;
+package ds.exception;
 
 public class SequenceUnderflowException extends Exception {
 	

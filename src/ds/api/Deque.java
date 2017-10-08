@@ -1,6 +1,6 @@
-package api;
+package ds.api;
 
-import exception.SequenceUnderflowException;
+import ds.exception.SequenceUnderflowException;
 
 public interface Deque extends Sequence {
 	

@@ -1,12 +1,12 @@
-package service;
+package ds.service;
 
-import api.Deque;
-import api.Queue;
-import api.Stack;
-import api.impl.DequeListImpl;
-import api.impl.QueueListImpl;
-import api.impl.StackListImpl;
-import exception.SequenceUnderflowException;
+import ds.api.Deque;
+import ds.api.Queue;
+import ds.api.Stack;
+import ds.api.impl.DequeListImpl;
+import ds.api.impl.QueueListImpl;
+import ds.api.impl.StackListImpl;
+import ds.exception.SequenceUnderflowException;
 
 public class SequenceService {
 
