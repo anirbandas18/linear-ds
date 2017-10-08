@@ -115,9 +115,23 @@ public class LinkedSequenceImpl extends LinkedSequence{
 	}
 	
 	@Override
-	public String reverse() {
+	public void reverse() {
 		// TODO Auto-generated method stub
-		return "";
+		SequenceNode temp = null;
+        SequenceNode ptr = start;
+        /* swap next and prev for all SequenceNodes of 
+         doubly linked list */
+        while (ptr != null) {
+            temp = ptr.getPrevious();
+            ptr.setPrevious(ptr.getNext());
+            ptr.setNext(temp);
+            ptr = ptr.getPrevious();
+        }
+        /* Before changing head, check for the cases like empty 
+         list and list with only one SequenceNode */
+        if (temp != null) {
+            start = temp.getPrevious();
+        }
 	}
 
 	@Override

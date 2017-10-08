@@ -24,7 +24,7 @@ public abstract class LinkedSequence implements Sequence {
 	
 	public abstract Boolean update(int index, Object item);
 	
-	public abstract String reverse();
+	public abstract void reverse();
 
 	public LinkedSequence() {
 		this.start = null;
