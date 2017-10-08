@@ -6,11 +6,7 @@ import ds.api.Stack;
 import ds.exception.SequenceUnderflowException;
 import ds.model.LinearNode;
 
-public class StackListImpl implements Stack {
-	
-	private LinearNode top;
-	
-	private Integer size;
+public class StackListImpl extends Stack {
 
 	@Override
 	public Boolean isEmpty() {

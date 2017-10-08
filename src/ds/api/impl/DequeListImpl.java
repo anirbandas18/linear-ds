@@ -6,12 +6,8 @@ import ds.api.Deque;
 import ds.exception.SequenceUnderflowException;
 import ds.model.LinearNode;
 
-public class DequeListImpl implements Deque {
+public class DequeListImpl extends Deque {
 	
-	private LinearNode front, rear;
-	
-	private Integer size;
-
 	@Override
 	public Boolean isEmpty() {
 		// TODO Auto-generated method stub

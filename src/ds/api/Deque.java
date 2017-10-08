@@ -1,19 +1,24 @@
 package ds.api;
 
 import ds.exception.SequenceUnderflowException;
+import ds.model.LinearNode;
 
-public interface Deque extends Sequence {
+public abstract class Deque implements Sequence {
 	
-	public void offerFirst(Object item);
+	protected LinearNode front, rear;
 	
-	public void offerLast(Object item);
+	protected Integer size;
 	
-	public Object pollFirst() throws SequenceUnderflowException;
+	public abstract void offerFirst(Object item);
 	
-	public Object pollLast() throws SequenceUnderflowException;
+	public abstract void offerLast(Object item);
 	
-	public Object peekFirst() throws SequenceUnderflowException;
+	public abstract Object pollFirst() throws SequenceUnderflowException;
 	
-	public Object peekLast() throws SequenceUnderflowException;
+	public abstract Object pollLast() throws SequenceUnderflowException;
+	
+	public abstract Object peekFirst() throws SequenceUnderflowException;
+	
+	public abstract Object peekLast() throws SequenceUnderflowException;
 
 }
