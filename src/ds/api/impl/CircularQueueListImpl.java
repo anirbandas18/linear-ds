@@ -2,14 +2,14 @@ package ds.api.impl;
 
 import ds.api.Queue;
 import ds.exception.SequenceUnderflowException;
-import ds.model.Node;
+import ds.model.ListNode;
 
 public class CircularQueueListImpl extends Queue {
 
 	@Override
 	public void insert(Object item) {
 		// TODO Auto-generated method stub
-		Node ndptr = new Node(item);
+		ListNode ndptr = new ListNode(item);
 		size++;
 		if(rear == null) {
 			front = rear = ndptr;

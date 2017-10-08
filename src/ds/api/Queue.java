@@ -1,11 +1,11 @@
 package ds.api;
 
 import ds.exception.SequenceUnderflowException;
-import ds.model.Node;
+import ds.model.ListNode;
 
 public abstract class Queue implements Sequence {
 
-	protected Node front, rear;
+	protected ListNode front, rear;
 
 	protected Integer size;
 	
