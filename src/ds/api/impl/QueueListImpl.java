@@ -1,7 +1,5 @@
 package ds.api.impl;
 
-import java.util.StringJoiner;
-
 import ds.api.Queue;
 import ds.exception.SequenceUnderflowException;
 import ds.model.ListNode;
@@ -50,17 +48,6 @@ public class QueueListImpl extends Queue {
 		this.front = null;
 		this.rear = null;
 		this.size = 0;
-	}
-	
-	@Override
-	public String display() {
-		// TODO Auto-generated method stub
-		StringJoiner content = new StringJoiner(" -> ");
-		for(ListNode ptr = front ; ptr != null ; ptr = ptr.getNext()) {
-			String data = ptr.getData().toString();
-			content = content.add(data);
-		}
-		return content.toString();
 	}
 	
 }

@@ -1,14 +1,30 @@
 package ds.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ds.api.Deque;
 import ds.api.Queue;
 import ds.api.Stack;
+import ds.api.impl.CircularQueueListImpl;
 import ds.api.impl.DequeListImpl;
 import ds.api.impl.QueueListImpl;
 import ds.api.impl.StackListImpl;
 import ds.exception.SequenceUnderflowException;
 
 public class SequenceService {
+	
+	private static List<Object> dataList;
+	
+	static {
+		dataList = new ArrayList<>();
+		dataList.add(1);
+		dataList.add(2.2d);
+		dataList.add("Anirban");
+		dataList.add('D');
+		dataList.add(true);
+		//dataList.add(null);
+	}
 
 	public static void queueDemo() {
 		Queue q = new QueueListImpl();
@@ -17,12 +33,9 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		q.insert(1);
-		q.insert(2);
-		q.insert("Anirban");
-		q.insert(3);
-		q.insert('D');
-		q.insert(true);
+		dataList.forEach(d -> {
+			q.insert(d);
+		});
 		System.out.println(q.display());
 		q.clear();
 		q.insert(1);
@@ -38,12 +51,9 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		s.push(1);
-		s.push(2);
-		s.push("Anirban");
-		s.push(3);
-		s.push('D');
-		s.push(true);
+		dataList.forEach(d -> {
+			s.push(d);
+		});
 		System.out.println(s.display());
 		s.clear();
 		s.push(1);
@@ -59,12 +69,14 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		d.offerFirst(1);
-		d.offerLast(2);
-		d.offerFirst("Anirban");
-		d.offerLast(3);
-		d.offerFirst('D');
-		d.offerLast(true);
+		for(int index = 0 ; index < dataList.size() ; index++) {
+			Object item = dataList.get(index);
+			if(index % 2 == 0) {
+				d.offerFirst(item);
+			} else {
+				d.offerLast(item);
+			}
+		}
 		System.out.println(d.display());
 		System.out.println(d.size());
 		d.clear();
@@ -73,7 +85,23 @@ public class SequenceService {
 		System.out.println(d.display());
 		System.out.println(d.size());
 	}
-
-
 	
+	public static void circularQueueDemo() {
+		Queue q = new CircularQueueListImpl();
+		try {
+			System.out.println(q.delete());
+		} catch (SequenceUnderflowException e) {
+			System.out.println(e.getMessage());
+		}
+		dataList.forEach(d -> {
+			q.insert(d);
+		});
+		System.out.println(q.display());
+		q.clear();
+		q.insert(1);
+		q.insert("jk");
+		System.out.println(q.display());
+		System.out.println(q.size());
+	}
+
 }

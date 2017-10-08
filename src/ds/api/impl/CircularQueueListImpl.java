@@ -42,7 +42,12 @@ public class CircularQueueListImpl extends Queue {
 	@Override
 	public Object peek() throws SequenceUnderflowException {
 		// TODO Auto-generated method stub
-		return null;
+		if(front == null) {
+			size = 0;
+			throw new SequenceUnderflowException(this.getClass());
+		} else {
+			return front.getData();
+		}
 	}
 
 }

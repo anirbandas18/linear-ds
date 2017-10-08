@@ -32,17 +32,6 @@ public class DequeListImpl implements Deque {
 	}
 
 	@Override
-	public String display() {
-		// TODO Auto-generated method stub
-		StringJoiner content = new StringJoiner(" -> ");
-		for(ListNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
-			String data = ptr.getData().toString();
-			content = content.add(data);
-		}
-		return content.toString();
-	}
-
-	@Override
 	public void offerFirst(Object item) {
 		// TODO Auto-generated method stub
 		ListNode ndptr = new ListNode(item);
@@ -126,6 +115,17 @@ public class DequeListImpl implements Deque {
 		this.front = null;
 		this.rear = null;
 		this.size = 0;
+	}
+
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		StringJoiner content = new StringJoiner(" -> ");
+		for(ListNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
+			String data = ptr.getData().toString();
+			content = content.add(data);
+		}
+		return content.toString();
 	}
 	
 }
