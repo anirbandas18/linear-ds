@@ -14,16 +14,16 @@ import ds.exception.SequenceUnderflowException;
 
 public class SequenceService {
 	
-	private static List<Object> dataList;
+	private static List<Object> testDataSet;
 	
 	static {
-		dataList = new ArrayList<>();
-		dataList.add(1);
-		dataList.add(2.2d);
-		dataList.add("Anirban");
-		dataList.add('D');
-		dataList.add(true);
-		//dataList.add(null);
+		testDataSet = new ArrayList<>();
+		testDataSet.add(1);
+		testDataSet.add(2.2d);
+		testDataSet.add("Anirban");
+		testDataSet.add('D');
+		testDataSet.add(true);
+		//testDataSet.add(null);
 	}
 
 	public static void queueDemo() {
@@ -33,7 +33,7 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		dataList.forEach(d -> {
+		testDataSet.forEach(d -> {
 			q.insert(d);
 		});
 		System.out.println(q.display());
@@ -51,7 +51,7 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		dataList.forEach(d -> {
+		testDataSet.forEach(d -> {
 			s.push(d);
 		});
 		System.out.println(s.display());
@@ -69,8 +69,8 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		for(int index = 0 ; index < dataList.size() ; index++) {
-			Object item = dataList.get(index);
+		for(int index = 0 ; index < testDataSet.size() ; index++) {
+			Object item = testDataSet.get(index);
 			if(index % 2 == 0) {
 				d.offerFirst(item);
 			} else {
@@ -93,7 +93,7 @@ public class SequenceService {
 		} catch (SequenceUnderflowException e) {
 			System.out.println(e.getMessage());
 		}
-		dataList.forEach(d -> {
+		testDataSet.forEach(d -> {
 			q.insert(d);
 		});
 		System.out.println(q.display());

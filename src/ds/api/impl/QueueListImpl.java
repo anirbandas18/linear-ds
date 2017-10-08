@@ -1,15 +1,17 @@
 package ds.api.impl;
 
+import java.util.StringJoiner;
+
 import ds.api.Queue;
 import ds.exception.SequenceUnderflowException;
-import ds.model.ListNode;
+import ds.model.LinearNode;
 
 public class QueueListImpl extends Queue {
 
 	@Override
 	public void insert(Object item) {
 		// TODO Auto-generated method stub
-		ListNode ndptr = new ListNode(item);
+		LinearNode ndptr = new LinearNode(item);
 		size++;
 		if(rear == null) {
 			front = rear = ndptr;
@@ -48,6 +50,17 @@ public class QueueListImpl extends Queue {
 		this.front = null;
 		this.rear = null;
 		this.size = 0;
+	}
+	
+	@Override
+	public String display() {
+		// TODO Auto-generated method stub
+		StringJoiner content = new StringJoiner(" -> ");
+		for(LinearNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
+			String data = ptr.getData().toString();
+			content = content.add(data);
+		}
+		return content.toString();
 	}
 	
 }

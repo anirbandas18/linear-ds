@@ -4,11 +4,11 @@ import java.util.StringJoiner;
 
 import ds.api.Stack;
 import ds.exception.SequenceUnderflowException;
-import ds.model.ListNode;
+import ds.model.LinearNode;
 
 public class StackListImpl implements Stack {
 	
-	private ListNode top;
+	private LinearNode top;
 	
 	private Integer size;
 
@@ -27,7 +27,7 @@ public class StackListImpl implements Stack {
 	@Override
 	public void push(Object item) {
 		// TODO Auto-generated method stub
-		ListNode ndptr = new ListNode(item);
+		LinearNode ndptr = new LinearNode(item);
 		size++;
 		if(top == null) {
 			top = ndptr;
@@ -73,7 +73,7 @@ public class StackListImpl implements Stack {
 	public String display() {
 		// TODO Auto-generated method stub
 		StringJoiner content = new StringJoiner(" -> ");
-		for(ListNode ptr = top ; ptr != null ; ptr = ptr.getNext()) {
+		for(LinearNode ptr = top ; ptr != null ; ptr = ptr.getNext()) {
 			String data = ptr.getData().toString();
 			content = content.add(data);
 		}

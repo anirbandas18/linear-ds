@@ -4,11 +4,11 @@ import java.util.StringJoiner;
 
 import ds.api.Deque;
 import ds.exception.SequenceUnderflowException;
-import ds.model.ListNode;
+import ds.model.LinearNode;
 
 public class DequeListImpl implements Deque {
 	
-	private ListNode front, rear;
+	private LinearNode front, rear;
 	
 	private Integer size;
 
@@ -34,7 +34,7 @@ public class DequeListImpl implements Deque {
 	@Override
 	public void offerFirst(Object item) {
 		// TODO Auto-generated method stub
-		ListNode ndptr = new ListNode(item);
+		LinearNode ndptr = new LinearNode(item);
 		size++;
 		if(front == null) {
 			front = rear = ndptr;
@@ -48,7 +48,7 @@ public class DequeListImpl implements Deque {
 	@Override
 	public void offerLast(Object item) {
 		// TODO Auto-generated method stub
-		ListNode ndptr = new ListNode(item);
+		LinearNode ndptr = new LinearNode(item);
 		size++;
 		if(rear == null) {
 			front = rear = ndptr;
@@ -121,7 +121,7 @@ public class DequeListImpl implements Deque {
 	public String display() {
 		// TODO Auto-generated method stub
 		StringJoiner content = new StringJoiner(" -> ");
-		for(ListNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
+		for(LinearNode ptr = front; ptr != null ; ptr = ptr.getNext()) {
 			String data = ptr.getData().toString();
 			content = content.add(data);
 		}

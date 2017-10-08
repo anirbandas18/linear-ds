@@ -8,7 +8,8 @@ public class LinearDSApplication {
 		// TODO Auto-generated method stub
 		//SequenceService.stackDemo();
 		//SequenceService.queueDemo();
-		SequenceService.dequeDemo();
+		//SequenceService.dequeDemo();
+		SequenceService.circularQueueDemo();
 	}
 
 }

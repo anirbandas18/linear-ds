@@ -1,13 +1,11 @@
 package ds.api;
 
-import java.util.StringJoiner;
-
 import ds.exception.SequenceUnderflowException;
-import ds.model.ListNode;
+import ds.model.LinearNode;
 
 public abstract class Queue implements Sequence {
 
-	protected ListNode front, rear;
+	protected LinearNode front, rear;
 
 	protected Integer size;
 	
@@ -30,7 +28,7 @@ public abstract class Queue implements Sequence {
 		size = 0;
 	}
 	
-	@Override
+	/*@Override
 	public String display() {
 		// TODO Auto-generated method stub
 		StringJoiner content = new StringJoiner(" -> ");
@@ -39,7 +37,7 @@ public abstract class Queue implements Sequence {
 			content = content.add(data);
 		}
 		return content.toString();
-	}
+	}*/
 
 	public abstract void insert(Object item);
 

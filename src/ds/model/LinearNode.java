@@ -1,31 +1,31 @@
 package ds.model;
 
-public class ListNode {
+public class LinearNode {
 	
 	private Object data;
-	private ListNode next, previous;
+	private LinearNode next, previous;
 	public Object getData() {
 		return data;
 	}
 	public void setData(Object data) {
 		this.data = data;
 	}
-	public ListNode getNext() {
+	public LinearNode getNext() {
 		return next;
 	}
-	public void setNext(ListNode next) {
+	public void setNext(LinearNode next) {
 		this.next = next;
 	}
-	public ListNode(Object data) {
+	public LinearNode(Object data) {
 		super();
 		this.data = data;
 		this.next = null;
 		this.previous = null;
 	}
-	public ListNode getPrevious() {
+	public LinearNode getPrevious() {
 		return previous;
 	}
-	public void setPrevious(ListNode previous) {
+	public void setPrevious(LinearNode previous) {
 		this.previous = previous;
 	}
 
